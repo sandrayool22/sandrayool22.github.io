@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portafolio | Sandra Yool</title>
+  <!-- Bulma CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root { --radius: 16px; }
+    body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji"; }
+    .is-rounded-xl { border-radius: var(--radius); }
+    .avatar { width: 140px; height: 140px; object-fit: cover; border-radius: 9999px; border: 4px solid #fff; box-shadow: 0 8px 24px rgba(10,10,10,.08); }
+    .shadow-soft { box-shadow: 0 10px 30px rgba(10,10,10,.06); }
+    .section-title { font-weight: 800; letter-spacing: .2px; }
+    .timeline .timeline-item::before { background: #485fc7; }
+    .is-muted { color: #6b7280; }
+    .skill-tag { margin: 6px 8px 0 0; }
+    .project-cover { height: 180px; object-fit: cover; }
+    .code { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+  </style>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar is-transparent" role="navigation" aria-label="main navigation">
+    <div class="container">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="#top"><strong>SY</strong></a>
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div id="navMenu" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item" href="#sobre-mi">Sobre mí</a>
+          <a class="navbar-item" href="#proyectos">Proyectos</a>
+          <a class="navbar-item" href="#habilidades">Habilidades</a>
+          <a class="navbar-item" href="#experiencia">Experiencia</a>
+          <a class="navbar-item" href="#contacto">Contacto</a>
+        </div>
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="buttons">
+              <a class="button is-primary is-light" href="#cv">Descargar CV</a>
+              <a class="button is-link is-light" target="_blank" rel="noopener" href="https://github.com/" title="GitHub">GitHub</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="top" class="hero is-link is-bold">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-vcentered">
+          <div class="column is-8">
+            <h1 class="title is-1">Sandra Yool</h1>
+            <p class="subtitle is-4">Desarrolladora en formación | Autómatas, lenguajes formales y proyectos web</p>
+            <p class="is-size-6">Trabajo con cadenas, gramáticas (Jerarquía de Chomsky), y proyectos prácticos: JFlex/CUP, JSP con Oracle, Arduino, y clasificación de limones en tiempo real. También jugueteo con robots de pelea 🤖⚙️.</p>
+            <div class="buttons mt-4">
+              <a href="#proyectos" class="button is-primary">Ver proyectos</a>
+              <a href="#contacto" class="button is-light">Contáctame</a>
+            </div>
+          </div>
+          <div class="column is-4 has-text-centered">
+            <figure>
+              <img id="avatarImg" class="avatar" src="https://via.placeholder.com/280x280.png?text=Tu+Foto" alt="Foto de perfil" />
+            </figure>
+            <div class="file is-small is-boxed is-link mt-3">
+              <label class="file-label">
+                <input id="avatarInput" class="file-input" type="file" accept="image/*">
+                <span class="file-cta">
+                  <span class="file-label">Subir foto…</span>
+                </span>
+              </label>
+            </div>
+            <p class="is-size-7 is-muted mt-2">(Se previsualiza localmente; no se sube a ningún servidor)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE MI -->
+  <section id="sobre-mi" class="section">
+    <div class="container">
+      <h2 class="title section-title">Sobre mí</h2>
+      <div class="columns">
+        <div class="column">
+          <div class="box is-rounded-xl shadow-soft">
+            <p>Me gusta decir las cosas como son: construyo soluciones simples y útiles. He trabajado con <span class="tag is-link is-light">JFlex</span> y <span class="tag is-link is-light">Java CUP</span> creando analizadores léxico-sintácticos; hago proyectos web con <span class="tag is-info is-light">JSP</span> + <span class="tag is-info is-light">Oracle</span>; y desarrollo integraciones <span class="tag is-warning is-light">Arduino</span> + Java para sensado y registro en BD.</p>
+            <p class="mt-3">Estoy en Guatemala (UTC-6). Busco seguir puliendo backend, bases de datos y sistemas embebidos.</p>
+          </div>
+        </div>
+        <div class="column is-one-third">
+          <div class="box is-rounded-xl shadow-soft">
+            <p class="has-text-weight-semibold mb-2">Datos rápidos</p>
+            <ul>
+              <li>📍 Guatemala</li>
+              <li>🎓 Interés fuerte en lenguajes formales y autómatas</li>
+              <li>🛠️ Robot de pelea universitario</li>
+              <li>🍋 Clasificación de limones por tamaño en tiempo real</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROYECTOS -->
+  <section id="proyectos" class="section">
+    <div class="container">
+      <h2 class="title section-title">Proyectos destacados</h2>
+      <div class="columns is-multiline">
+        <!-- Proyecto 1: Analizador con JFlex/CUP -->
+        <div class="column is-4">
+          <div class="card is-rounded-xl shadow-soft">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img class="project-cover" src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=800&auto=format&fit=crop" alt="IDE y código Java" />
+              </figure>
+            </div>
+            <div class="card-content">
+              <p class="title is-5">Mini lenguaje: <span class="code">CALCULAR/OPERAR</span></p>
+              <p class="content">Analizador léxico-sintáctico con JFlex + CUP para evaluar expresiones y estructuras de control <em>SI…ENTONCES…SINO…FIN</em>. Incluye interfaz sencilla con entrada/salida.</p>
+              <div class="tags">
+                <span class="tag is-dark">Java</span>
+                <span class="tag is-info">JFlex</span>
+                <span class="tag is-link">CUP</span>
+              </div>
+              <a class="button is-small is-link is-light" href="#" aria-disabled="true">Repositorio (próximamente)</a>
+            </div>
+          </div>
+        </div>
+        <!-- Proyecto 2: JSP + Oracle -->
+        <div class="column is-4">
+          <div class="card is-rounded-xl shadow-soft">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img class="project-cover" src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=800&auto=format&fit=crop" alt="Base de datos y dashboard" />
+              </figure>
+            </div>
+            <div class="card-content">
+              <p class="title is-5">Lunch Roll — menú desde Oracle</p>
+              <p class="content">Aplicación JSP que obtiene ítems de menú directamente desde Oracle (BD_LUNCHROLL). Incluye validación de usuarios, selección de comida y registro de pedidos.</p>
+              <div class="tags">
+                <span class="tag is-danger">Oracle</span>
+                <span class="tag is-info">JSP</span>
+                <span class="tag is-warning is-light">JDBC</span>
+                <span class="tag is-primary is-light">Bulma</span>
+              </div>
+              <a class="button is-small is-link is-light" href="#" aria-disabled="true">Demo</a>
+            </div>
+          </div>
+        </div>
+        <!-- Proyecto 3: Arduino + Java + Oracle -->
+        <div class="column is-4">
+          <div class="card is-rounded-xl shadow-soft">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img class="project-cover" src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=800&auto=format&fit=crop" alt="Prototipo electrónico" />
+              </figure>
+            </div>
+            <div class="card-content">
+              <p class="title is-5">Clasificación de limones</p>
+              <p class="content">Tres sensores de peso envían datos a Java; se registran en Oracle en tiempo real para clasificar limones (pequeño/mediano/grande) por lote y sesión.</p>
+              <div class="tags">
+                <span class="tag is-warning">Arduino</span>
+                <span class="tag is-dark">Java</span>
+                <span class="tag is-danger">Oracle</span>
+                <span class="tag is-success is-light">Tiempo real</span>
+              </div>
+              <a class="button is-small is-link is-light" href="#" aria-disabled="true">Ver más</a>
+            </div>
+          </div>
+        </div>
+        <!-- Proyecto 4: Robot de pelea -->
+        <div class="column is-4">
+          <div class="card is-rounded-xl shadow-soft">
+            <div class="card-image">
+              <figure class="image is-16by9">
+                <img class="project-cover" src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800&auto=format&fit=crop" alt="Robot de pelea" />
+              </figure>
+            </div>
+            <div class="card-content">
+              <p class="title is-5">Robot de pelea</p>
+              <p class="content">Chasis, selección de motores/ESC y control con Raspberry + módulo L298N. Enfoque en autonomía y resistencia.</p>
+              <div class="tags">
+                <span class="tag is-info">Raspberry Pi</span>
+                <span class="tag is-warning">L298N</span>
+                <span class="tag is-link is-light">Control motores</span>
+              </div>
+              <a class="button is-small is-link is-light" href="#" aria-disabled="true">Notas técnicas</a>
+            </div>
+          </div>
+        </div>
+        <!-- Proyecto 5: CRUD Bulma + PHP -->
+        <div class="column is-4">
+          <div class="card is-rounded-xl shadow-soft">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img class="project-cover" src="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?q=80&w=800&auto=format&fit=crop" alt="Interfaz web minimalista" />
+              </figure>
+            </div>
+            <div class="card-content">
+              <p class="title is-5">CRUD con Bulma</p>
+              <p class="content">Interfaz de tareas con filtros por mes, creación/edición/eliminación y parámetros por URL; estilo 100% Bulma.</p>
+              <div class="tags">
+                <span class="tag is-primary">Bulma</span>
+                <span class="tag is-info is-light">PHP</span>
+                <span class="tag is-success is-light">MySQL</span>
+              </div>
+              <a class="button is-small is-link is-light" href="#" aria-disabled="true">Código</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HABILIDADES -->
+  <section id="habilidades" class="section">
+    <div class="container">
+      <h2 class="title section-title">Habilidades</h2>
+      <div class="box is-rounded-xl shadow-soft">
+        <div class="tags">
+          <span class="tag is-primary skill-tag">Bulma</span>
+          <span class="tag is-dark skill-tag">Java</span>
+          <span class="tag is-info skill-tag">JSP</span>
+          <span class="tag is-danger skill-tag">Oracle</span>
+          <span class="tag is-warning skill-tag">Arduino</span>
+          <span class="tag is-link skill-tag">CUP</span>
+          <span class="tag is-link is-light skill-tag">JFlex</span>
+          <span class="tag is-success skill-tag">HTML/CSS</span>
+          <span class="tag is-info is-light skill-tag">Raspberry Pi</span>
+          <span class="tag is-warning is-light skill-tag">L298N</span>
+          <span class="tag is-black is-light skill-tag">UML</span>
+          <span class="tag is-success is-light skill-tag">Modelado ER</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCIA / TIMELINE -->
+  <section id="experiencia" class="section">
+    <div class="container">
+      <h2 class="title section-title">Experiencia & Logros</h2>
+      <div class="timeline is-centered">
+        <header class="timeline-header"><span class="tag is-medium is-link">Actualidad</span></header>
+        <div class="timeline-item is-primary">
+          <div class="timeline-marker is-link"></div>
+          <div class="timeline-content">
+            <p class="heading">2025</p>
+            <p>Integración Arduino + Java + Oracle para clasificación de limones con sesiones y lotes.</p>
+          </div>
+        </div>
+        <div class="timeline-item is-primary">
+          <div class="timeline-marker is-link"></div>
+          <div class="timeline-content">
+            <p class="heading">2024</p>
+            <p>Analizador léxico-sintáctico con JFlex/CUP para mini lenguaje de control de flujo.</p>
+          </div>
+        </div>
+        <div class="timeline-item is-primary">
+          <div class="timeline-marker is-link"></div>
+          <div class="timeline-content">
+            <p class="heading">2023</p>
+            <p>Prototipos web con JSP + Oracle (validación, menú dinámico, historial con gráficas).</p>
+          </div>
+        </div>
+        <div class="timeline-header"><span class="tag is-medium is-light">Inicio</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="section">
+    <div class="container">
+      <h2 class="title section-title">Contacto</h2>
+      <div class="columns">
+        <div class="column is-7">
+          <div class="box is-rounded-xl shadow-soft">
+            <form name="contacto" onsubmit="event.preventDefault(); alert('¡Gracias! Te responderé pronto.'); this.reset();">
+              <div class="field">
+                <label class="label">Nombre</label>
+                <div class="control">
+                  <input class="input" type="text" placeholder="Tu nombre" required>
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Correo</label>
+                <div class="control has-icons-left">
+                  <input class="input" type="email" placeholder="tucorreo@ejemplo.com" required>
+                  <span class="icon is-small is-left"><i class="fas fa-envelope"></i></span>
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Mensaje</label>
+                <div class="control">
+                  <textarea class="textarea" placeholder="¿Cómo puedo ayudarte?" required></textarea>
+                </div>
+              </div>
+              <div class="field is-grouped">
+                <div class="control"><button class="button is-link">Enviar</button></div>
+                <div class="control"><button class="button is-light" type="reset">Limpiar</button></div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="column">
+          <div class="box is-rounded-xl shadow-soft">
+            <p class="has-text-weight-semibold">Redes</p>
+            <div class="buttons mt-2">
+              <a class="button is-small is-dark" target="_blank" rel="noopener" href="#">GitHub</a>
+              <a class="button is-small is-link is-light" target="_blank" rel="noopener" href="#">LinkedIn</a>
+              <a class="button is-small is-info is-light" target="_blank" rel="noopener" href="#">Twitter</a>
+            </div>
+            <p class="is-size-7 is-muted mt-2">Actualiza los enlaces con tus perfiles reales.</p>
+          </div>
+          <div id="cv" class="box is-rounded-xl shadow-soft">
+            <p class="has-text-weight-semibold">CV</p>
+            <p class="is-size-7 is-muted">Puedes enlazar aquí un PDF en Drive o subir tu archivo al repositorio.</p>
+            <a class="button is-small is-primary is-light" href="#" aria-disabled="true">Descargar CV</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>© <span id="year"></span> Sandra Yool — Hecho con <a href="https://bulma.io" target="_blank" rel="noopener">Bulma</a>.</p>
+    </div>
+  </footer>
+
+  <!-- FontAwesome (opcional para iconos del formulario) -->
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  <script>
+    // Navbar burger
+    document.addEventListener('DOMContentLoaded', () => {
+      const burgers = Array.from(document.querySelectorAll('.navbar-burger'));
+      burgers.forEach(b => b.addEventListener('click', () => {
+        const target = document.getElementById(b.dataset.target);
+        b.classList.toggle('is-active');
+        target.classList.toggle('is-active');
+      }));
+      // Año
+      document.getElementById('year').textContent = new Date().getFullYear();
+      // Preview de foto local
+      const input = document.getElementById('avatarInput');
+      const img = document.getElementById('avatarImg');
+      input?.addEventListener('change', (e) => {
+        const file = e.target.files && e.target.files[0];
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onload = (ev) => { img.src = ev.target.result; };
+        reader.readAsDataURL(file);
+      });
+    });
+  </script>
+</body>
+</html>

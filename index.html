@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -6,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Inventra | DataMarket S.A.</title>
+    <title>Dashboard | Inventra</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
@@ -112,7 +113,7 @@
 
         .cards{
             display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
             gap:20px;
             margin-bottom:35px;
         }
@@ -131,102 +132,44 @@
 
         .card h3{
             margin-top:15px;
-            font-size:32px;
+            font-size:35px;
         }
 
-        .crud-container{
+        .card p{
+            margin-top:10px;
+            color:#cbd5e1;
+            font-size:14px;
+            line-height:1.5;
+        }
+
+        .activity-container{
             background:#1e293b;
             border-radius:25px;
             padding:30px;
             border:1px solid rgba(255,255,255,0.05);
         }
 
-        .crud-header{
+        .activity-container h3{
             margin-bottom:25px;
-        }
-
-        .crud-header h3{
-            margin-bottom:10px;
             font-size:24px;
         }
 
-        .crud-header p{
+        .activity{
+            background:#0f172a;
+            padding:18px;
+            border-radius:15px;
+            margin-bottom:15px;
+            border-left:4px solid #2563eb;
+        }
+
+        .activity strong{
+            display:block;
+            margin-bottom:5px;
+        }
+
+        .activity span{
             color:#94a3b8;
             font-size:14px;
-        }
-
-        .form-grid{
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-            gap:15px;
-            margin-bottom:25px;
-        }
-
-        input{
-            padding:14px;
-            border:none;
-            border-radius:12px;
-            background:#0f172a;
-            color:white;
-            outline:none;
-        }
-
-        .btn{
-            background:#2563eb;
-            border:none;
-            color:white;
-            border-radius:12px;
-            cursor:pointer;
-            font-weight:600;
-            transition:0.3s;
-        }
-
-        .btn:hover{
-            background:#3b82f6;
-        }
-
-        table{
-            width:100%;
-            border-collapse:collapse;
-        }
-
-        th{
-            background:#0f172a;
-            padding:15px;
-            color:#60a5fa;
-        }
-
-        td{
-            padding:15px;
-            text-align:center;
-            border-bottom:1px solid rgba(255,255,255,0.05);
-        }
-
-        .delete-btn{
-            background:#dc2626;
-            border:none;
-            color:white;
-            padding:10px 15px;
-            border-radius:10px;
-            cursor:pointer;
-        }
-
-        .delete-btn:hover{
-            background:#ef4444;
-        }
-
-        .edit-btn{
-            background:#f59e0b;
-            border:none;
-            color:white;
-            padding:10px 15px;
-            border-radius:10px;
-            cursor:pointer;
-            margin-right:8px;
-        }
-
-        .edit-btn:hover{
-            background:#fbbf24;
         }
 
         @media(max-width:900px){
@@ -260,11 +203,25 @@
 
             <div class="menu">
 
-                <a href="dashboard.html" class="active">Dashboard</a>
-                <a href="inventario.html">Inventario</a>
-                <a href=pedidos.html">Pedidos</a>
-                <a href="reportes.html">Reportes</a>
-                <a href="usuarios.html">Usuarios</a>
+                <a href="dashboard.html" class="active">
+                    Dashboard
+                </a>
+
+                <a href="inventario.html">
+                    Inventario
+                </a>
+
+                <a href="pedidos.html">
+                    Pedidos
+                </a>
+
+                <a href="reportes.html">
+                    Reportes
+                </a>
+
+                <a href="usuarios.html">
+                    Usuarios
+                </a>
 
             </div>
 
@@ -283,10 +240,10 @@
 
         <div class="topbar">
 
-            <h2>Panel de Inventario</h2>
+            <h2>Dashboard General</h2>
 
             <div class="status">
-                ● Sistema en línea
+                ● Sistema operativo
             </div>
 
         </div>
@@ -294,272 +251,114 @@
         <section class="cards">
 
             <div class="card">
-                <span>Productos registrados</span>
-                <h3 id="contadorProductos">0</h3>
-            </div>
 
-            <div class="card">
-                <span>Pedidos procesados</span>
-                <h3>18</h3>
-            </div>
+                <span>Productos disponibles</span>
 
-            <div class="card">
-                <span>Productos con bajo stock</span>
-                <h3>4</h3>
-            </div>
-
-            <div class="card">
-                <span>Usuarios activos</span>
-                <h3>6</h3>
-            </div>
-
-        </section>
-
-        <section class="crud-container">
-
-            <div class="crud-header">
-
-                <h3>Gestión de Productos</h3>
+                <h3>248</h3>
 
                 <p>
-                    Registro y administración de inventario.
+                    Total de productos registrados actualmente
+                    dentro del sistema de inventario.
                 </p>
 
             </div>
 
-            <div class="form-grid">
+            <div class="card">
 
-                <input
-                    type="text"
-                    id="nombre"
-                    placeholder="Nombre del producto"
-                >
+                <span>Pedidos pendientes</span>
 
-                <input
-                    type="number"
-                    id="precio"
-                    placeholder="Precio"
-                >
+                <h3>12</h3>
 
-                <input
-                    type="number"
-                    id="stock"
-                    placeholder="Cantidad en stock"
-                >
-
-                <button class="btn" onclick="agregarProducto()">
-                    Registrar
-                </button>
+                <p>
+                    Pedidos que aún no han sido completados
+                    o entregados.
+                </p>
 
             </div>
 
-            <table>
+            <div class="card">
 
-                <thead>
+                <span>Último pedido registrado</span>
 
-                    <tr>
-                        <th>Producto</th>
-                        <th>Precio</th>
-                        <th>Stock</th>
-                        <th>Acciones</th>
-                    </tr>
+                <h3>#1042</h3>
 
-                </thead>
+                <p>
+                    Cliente: Carlos López <br>
+                    Registrado a las 08:45 AM.
+                </p>
 
-                <tbody id="tablaProductos"></tbody>
+            </div>
 
-            </table>
+            <div class="card">
+
+                <span>Último usuario conectado</span>
+
+                <h3>María G.</h3>
+
+                <p>
+                    Área de inventario <br>
+                    Activo hace 2 minutos.
+                </p>
+
+            </div>
+
+        </section>
+
+        <section class="activity-container">
+
+            <h3>Actividad Reciente</h3>
+
+            <div class="activity">
+
+                <strong>
+                    ✔ Producto agregado al inventario
+                </strong>
+
+                <span>
+                    Monitor Samsung registrado correctamente.
+                </span>
+
+            </div>
+
+            <div class="activity">
+
+                <strong>
+                    ✔ Pedido actualizado
+                </strong>
+
+                <span>
+                    Pedido #1038 marcado como completado.
+                </span>
+
+            </div>
+
+            <div class="activity">
+
+                <strong>
+                    ✔ Usuario modificado
+                </strong>
+
+                <span>
+                    Permisos de administrador actualizados.
+                </span>
+
+            </div>
+
+            <div class="activity">
+
+                <strong>
+                    ✔ Stock actualizado
+                </strong>
+
+                <span>
+                    Cambio de inventario realizado correctamente.
+                </span>
+
+            </div>
 
         </section>
 
     </main>
-
-    <script>
-
-        let productos = JSON.parse(
-            localStorage.getItem("productos")
-        ) || [];
-
-        let editando = false;
-        let idEditar = null;
-
-        function guardarLocal(){
-
-            localStorage.setItem(
-                "productos",
-                JSON.stringify(productos)
-            );
-
-        }
-
-        function agregarProducto(){
-
-            const nombre = document.getElementById("nombre").value;
-            const precio = document.getElementById("precio").value;
-            const stock = document.getElementById("stock").value;
-
-            if(
-                nombre === "" ||
-                precio === "" ||
-                stock === ""
-            ){
-
-                alert("Completa todos los campos");
-                return;
-
-            }
-
-            if(editando){
-
-                productos = productos.map(producto => {
-
-                    if(producto.id === idEditar){
-
-                        return{
-                            ...producto,
-                            nombre,
-                            precio,
-                            stock
-                        };
-
-                    }
-
-                    return producto;
-
-                });
-
-                editando = false;
-                idEditar = null;
-
-                document.querySelector(".btn").innerText =
-                "Registrar";
-
-            }else{
-
-                const producto = {
-
-                    id: Date.now(),
-                    nombre,
-                    precio,
-                    stock
-
-                };
-
-                productos.push(producto);
-
-            }
-
-            guardarLocal();
-
-            mostrarProductos();
-
-            limpiarCampos();
-
-        }
-
-        function mostrarProductos(){
-
-            const tabla = document.getElementById(
-                "tablaProductos"
-            );
-
-            tabla.innerHTML = "";
-
-            productos.forEach(producto => {
-
-                tabla.innerHTML += `
-
-                    <tr>
-
-                        <td>${producto.nombre}</td>
-
-                        <td>Q${producto.precio}</td>
-
-                        <td>${producto.stock}</td>
-
-                        <td>
-
-                            <button
-                                class="edit-btn"
-                                onclick="editarProducto(${producto.id})"
-                            >
-                                Modificar
-                            </button>
-
-                            <button
-                                class="delete-btn"
-                                onclick="eliminarProducto(${producto.id})"
-                            >
-                                Eliminar
-                            </button>
-
-                        </td>
-
-                    </tr>
-
-                `;
-
-            });
-
-            actualizarDashboard();
-
-        }
-
-        function editarProducto(id){
-
-            const producto = productos.find(
-                producto => producto.id === id
-            );
-
-            document.getElementById("nombre").value =
-            producto.nombre;
-
-            document.getElementById("precio").value =
-            producto.precio;
-
-            document.getElementById("stock").value =
-            producto.stock;
-
-            editando = true;
-
-            idEditar = id;
-
-            document.querySelector(".btn").innerText =
-            "Guardar Cambios";
-
-        }
-
-        function eliminarProducto(id){
-
-            productos = productos.filter(
-                producto => producto.id !== id
-            );
-
-            guardarLocal();
-
-            mostrarProductos();
-
-        }
-
-        function actualizarDashboard(){
-
-            document.getElementById(
-                "contadorProductos"
-            ).innerText = productos.length;
-
-        }
-
-        function limpiarCampos(){
-
-            document.getElementById("nombre").value = "";
-            document.getElementById("precio").value = "";
-            document.getElementById("stock").value = "";
-
-        }
-
-        mostrarProductos();
-
-    </script>
 
 </body>
 </html>

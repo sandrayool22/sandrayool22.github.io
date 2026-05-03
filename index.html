@@ -1,21 +1,83 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventra</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
 <body>
 
+    <div class="background-glow"></div>
+
     <header>
-        <h1>Inventra</h1>
-        <p>Sistema de Gestión para DataMarket S.A.</p>
+
+        <div class="logo-section">
+            <h1>INVENTRA</h1>
+            <span>Smart Inventory System</span>
+        </div>
+
+        <nav>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="productos.html">Productos</a>
+            <a href="pedidos.html">Pedidos</a>
+        </nav>
+
     </header>
 
-    <nav>
-        <a href="dashboard.html">Dashboard</a>
-        <a href="productos.html">Productos</a>
-        <a href="pedidos.html">Pedidos</a>
-    </nav>
-
     <main>
-        <section class="bienvenida">
-            <h2>Bienvenido al sistema</h2>
-            <p>Controla productos, pedidos e inventario desde un solo lugar.</p>
+
+        <section class="hero">
+
+            <div class="hero-text">
+
+                <h2>
+                    Control inteligente <br>
+                    para tu inventario
+                </h2>
+
+                <p>
+                    Gestiona productos, pedidos y estadísticas
+                    desde una plataforma moderna y centralizada.
+                </p>
+
+                <a href="dashboard.html" class="btn-primary">
+                    Ingresar al sistema
+                </a>
+
+            </div>
+
+            <div class="hero-card">
+
+                <div class="card-glow"></div>
+
+                <h3>Estado del Sistema</h3>
+
+                <div class="status-box">
+                    <span>Productos registrados</span>
+                    <strong>124</strong>
+                </div>
+
+                <div class="status-box">
+                    <span>Pedidos procesados</span>
+                    <strong>57</strong>
+                </div>
+
+                <div class="status-box">
+                    <span>Conexión</span>
+                    <strong class="online">ONLINE</strong>
+                </div>
+
+            </div>
+
         </section>
+
     </main>
 
 </body>

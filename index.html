@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Inventra</title>
+    <title>Inventra | DataMarket S.A.</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
@@ -19,28 +19,27 @@
 
         body{
             font-family:'Poppins',sans-serif;
-            background:#0f172a;
+            background:#020617;
             color:white;
-            min-height:100vh;
             overflow-x:hidden;
+            min-height:100vh;
             position:relative;
         }
 
-        .background-glow{
+        .bg-light{
             position:absolute;
             width:500px;
             height:500px;
             background:#2563eb;
             filter:blur(180px);
-            opacity:0.25;
+            opacity:0.20;
             top:-150px;
             right:-100px;
-            z-index:0;
         }
 
         header{
             width:100%;
-            padding:25px 80px;
+            padding:25px 70px;
             display:flex;
             justify-content:space-between;
             align-items:center;
@@ -48,27 +47,27 @@
             z-index:2;
         }
 
-        .logo-section h1{
-            font-size:32px;
-            letter-spacing:3px;
+        .logo h1{
             color:#60a5fa;
+            font-size:32px;
+            letter-spacing:2px;
         }
 
-        .logo-section span{
+        .logo p{
             color:#94a3b8;
             font-size:14px;
         }
 
         nav{
             display:flex;
-            gap:30px;
+            gap:25px;
         }
 
         nav a{
             color:white;
             text-decoration:none;
-            font-weight:500;
             transition:0.3s;
+            font-weight:500;
         }
 
         nav a:hover{
@@ -76,155 +75,174 @@
         }
 
         main{
-            width:100%;
-            min-height:85vh;
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            padding:40px 80px;
+            padding:50px 70px;
             position:relative;
             z-index:2;
         }
 
-        .hero{
-            width:100%;
+        .top-section{
             display:flex;
             justify-content:space-between;
             align-items:center;
             gap:50px;
+            margin-bottom:50px;
         }
 
         .hero-text{
-            max-width:600px;
+            max-width:650px;
         }
 
         .hero-text h2{
-            font-size:64px;
+            font-size:58px;
             line-height:1.1;
-            margin-bottom:25px;
+            margin-bottom:20px;
         }
 
         .hero-text p{
             color:#cbd5e1;
             font-size:18px;
-            margin-bottom:35px;
             line-height:1.7;
+            margin-bottom:30px;
         }
 
-        .btn-primary{
-            display:inline-block;
+        .btn{
             padding:15px 35px;
             background:#2563eb;
+            border:none;
             border-radius:12px;
             color:white;
-            text-decoration:none;
             font-weight:600;
-            transition:0.3s;
-            border:none;
             cursor:pointer;
+            transition:0.3s;
         }
 
-        .btn-primary:hover{
-            transform:translateY(-3px);
+        .btn:hover{
             background:#3b82f6;
+            transform:translateY(-3px);
         }
 
-        .hero-card{
-            width:420px;
+        .dashboard-card{
+            width:380px;
             background:rgba(255,255,255,0.05);
             border:1px solid rgba(255,255,255,0.08);
             backdrop-filter:blur(15px);
             border-radius:25px;
-            padding:35px;
+            padding:30px;
             position:relative;
             overflow:hidden;
         }
 
-        .card-glow{
+        .dashboard-card::before{
+            content:'';
             position:absolute;
             width:250px;
             height:250px;
-            background:#3b82f6;
-            filter:blur(100px);
-            opacity:0.25;
-            top:-80px;
-            right:-80px;
+            background:#2563eb;
+            filter:blur(120px);
+            opacity:0.20;
+            top:-100px;
+            right:-100px;
         }
 
-        .hero-card h3{
-            margin-bottom:30px;
-            font-size:24px;
+        .dashboard-card h3{
+            margin-bottom:25px;
+            position:relative;
         }
 
-        .status-box{
+        .mini-box{
             background:rgba(255,255,255,0.05);
-            border-radius:15px;
             padding:18px;
-            margin-bottom:18px;
+            border-radius:15px;
+            margin-bottom:15px;
             display:flex;
             justify-content:space-between;
             align-items:center;
+            position:relative;
         }
 
-        .status-box span{
+        .mini-box span{
             color:#cbd5e1;
         }
 
-        .status-box strong{
-            font-size:20px;
+        .mini-box strong{
+            font-size:22px;
         }
 
         .online{
             color:#22c55e;
         }
 
-        .crud-section{
-            margin-top:25px;
+        .crud-container{
+            width:100%;
+            background:rgba(255,255,255,0.04);
+            border:1px solid rgba(255,255,255,0.08);
+            border-radius:25px;
+            padding:35px;
+            backdrop-filter:blur(10px);
         }
 
-        .crud-section input{
-            width:100%;
-            padding:14px;
-            margin-bottom:15px;
+        .crud-header{
+            margin-bottom:30px;
+        }
+
+        .crud-header h3{
+            font-size:32px;
+            margin-bottom:10px;
+        }
+
+        .crud-header p{
+            color:#94a3b8;
+        }
+
+        .form-grid{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+            gap:15px;
+            margin-bottom:25px;
+        }
+
+        .form-grid input{
+            padding:15px;
             border:none;
-            border-radius:10px;
-            background:#1e293b;
+            border-radius:12px;
+            background:#0f172a;
             color:white;
             outline:none;
         }
 
         table{
             width:100%;
-            margin-top:20px;
             border-collapse:collapse;
+            margin-top:25px;
         }
 
-        table th{
+        th{
             background:#1e293b;
-            padding:12px;
+            padding:15px;
+            color:#60a5fa;
         }
 
-        table td{
+        td{
+            padding:15px;
             background:rgba(255,255,255,0.03);
-            padding:12px;
             text-align:center;
+            border-bottom:1px solid rgba(255,255,255,0.05);
         }
 
         .delete-btn{
             background:#dc2626;
-            padding:8px 15px;
             border:none;
-            border-radius:8px;
+            padding:10px 15px;
             color:white;
+            border-radius:8px;
             cursor:pointer;
         }
 
-        @media(max-width:950px){
+        .delete-btn:hover{
+            background:#ef4444;
+        }
 
-            .hero{
-                flex-direction:column;
-                text-align:center;
-            }
+        @media(max-width:950px){
 
             header{
                 flex-direction:column;
@@ -236,11 +254,15 @@
                 padding:25px;
             }
 
+            .top-section{
+                flex-direction:column;
+            }
+
             .hero-text h2{
                 font-size:42px;
             }
 
-            .hero-card{
+            .dashboard-card{
                 width:100%;
             }
 
@@ -252,82 +274,130 @@
 
 <body>
 
-    <div class="background-glow"></div>
+    <div class="bg-light"></div>
 
     <header>
 
-        <div class="logo-section">
+        <div class="logo">
             <h1>INVENTRA</h1>
-            <span>Smart Inventory System</span>
+            <p>Plataforma inteligente para DataMarket S.A.</p>
         </div>
 
         <nav>
             <a href="#">Dashboard</a>
-            <a href="#">Productos</a>
+            <a href="#">Inventario</a>
             <a href="#">Pedidos</a>
+            <a href="#">Reportes</a>
         </nav>
 
     </header>
 
     <main>
 
-        <section class="hero">
+        <section class="top-section">
 
             <div class="hero-text">
 
                 <h2>
-                    Control inteligente <br>
-                    para tu inventario
+                    Centraliza y controla <br>
+                    la información de DataMarket
                 </h2>
 
                 <p>
-                    Gestiona productos, pedidos y estadísticas
-                    desde una plataforma moderna y centralizada.
+                    Inventra permite administrar productos, inventario y pedidos
+                    desde una sola plataforma moderna, reduciendo errores,
+                    retrasos y desorganización operativa.
                 </p>
+
+                <button class="btn">
+                    Sistema Activo
+                </button>
 
             </div>
 
-            <div class="hero-card">
+            <div class="dashboard-card">
 
-                <div class="card-glow"></div>
+                <h3>Dashboard Operativo</h3>
 
-                <h3>Registro de Productos</h3>
-
-                <div class="status-box">
+                <div class="mini-box">
                     <span>Estado del sistema</span>
                     <strong class="online">ONLINE</strong>
                 </div>
 
-                <div class="crud-section">
+                <div class="mini-box">
+                    <span>Productos registrados</span>
+                    <strong id="contadorProductos">0</strong>
+                </div>
 
-                    <input type="text" id="nombre" placeholder="Nombre del producto">
+                <div class="mini-box">
+                    <span>Pedidos procesados</span>
+                    <strong>12</strong>
+                </div>
 
-                    <input type="number" id="precio" placeholder="Precio">
-
-                    <input type="number" id="stock" placeholder="Stock">
-
-                    <button class="btn-primary" onclick="agregarProducto()">
-                        Guardar Producto
-                    </button>
-
-                    <table>
-
-                        <thead>
-                            <tr>
-                                <th>Producto</th>
-                                <th>Precio</th>
-                                <th>Stock</th>
-                                <th>Acción</th>
-                            </tr>
-                        </thead>
-
-                        <tbody id="tablaProductos"></tbody>
-
-                    </table>
-
+                <div class="mini-box">
+                    <span>Inventario bajo</span>
+                    <strong>3</strong>
                 </div>
 
             </div>
+
+        </section>
+
+        <section class="crud-container">
+
+            <div class="crud-header">
+
+                <h3>Módulo de Inventario</h3>
+
+                <p>
+                    Registro y control de productos para optimizar
+                    la operación de DataMarket S.A.
+                </p>
+
+            </div>
+
+            <div class="form-grid">
+
+                <input 
+                    type="text" 
+                    id="nombre"
+                    placeholder="Nombre del producto"
+                >
+
+                <input 
+                    type="number"
+                    id="precio"
+                    placeholder="Precio"
+                >
+
+                <input 
+                    type="number"
+                    id="stock"
+                    placeholder="Stock disponible"
+                >
+
+                <button class="btn" onclick="agregarProducto()">
+                    Registrar Producto
+                </button>
+
+            </div>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>Producto</th>
+                        <th>Precio</th>
+                        <th>Stock</th>
+                        <th>Acción</th>
+                    </tr>
+
+                </thead>
+
+                <tbody id="tablaProductos"></tbody>
+
+            </table>
 
         </section>
 
@@ -335,7 +405,9 @@
 
     <script>
 
-        let productos = JSON.parse(localStorage.getItem("productos")) || [];
+        let productos = JSON.parse(
+            localStorage.getItem("productos")
+        ) || [];
 
         function guardarLocal(){
 
@@ -352,11 +424,13 @@
             const precio = document.getElementById("precio").value;
             const stock = document.getElementById("stock").value;
 
-            if(nombre === "" || precio === "" || stock === ""){
-
+            if(
+                nombre === "" ||
+                precio === "" ||
+                stock === ""
+            ){
                 alert("Completa todos los campos");
                 return;
-
             }
 
             const producto = {
@@ -397,12 +471,14 @@
                         <td>${producto.stock}</td>
 
                         <td>
-                            <button 
+
+                            <button
                                 class="delete-btn"
                                 onclick="eliminarProducto(${producto.id})"
                             >
                                 Eliminar
                             </button>
+
                         </td>
 
                     </tr>
@@ -410,6 +486,8 @@
                 `;
 
             });
+
+            actualizarDashboard();
 
         }
 
@@ -422,6 +500,14 @@
             guardarLocal();
 
             mostrarProductos();
+
+        }
+
+        function actualizarDashboard(){
+
+            document.getElementById(
+                "contadorProductos"
+            ).innerText = productos.length;
 
         }
 

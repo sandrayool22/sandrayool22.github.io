@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pedidos | Inventra</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            font-family:'Poppins',sans-serif;
+            background:#0f172a;
+            color:white;
+            min-height:100vh;
+            display:flex;
+        }
+
+        .sidebar{
+            width:260px;
+            background:#020617;
+            border-right:1px solid rgba(255,255,255,0.05);
+            padding:30px 20px;
+            display:flex;
+            flex-direction:column;
+            justify-content:space-between;
+        }
+
+        .logo h1{
+            color:#60a5fa;
+            font-size:28px;
+            margin-bottom:5px;
+        }
+
+        .logo span{
+            color:#94a3b8;
+            font-size:13px;
+        }
+
+        .menu{
+            margin-top:50px;
+        }
+
+        .menu a{
+            display:block;
+            text-decoration:none;
+            color:#cbd5e1;
+            padding:15px;
+            border-radius:12px;
+            margin-bottom:10px;
+            transition:0.3s;
+        }
+
+        .menu a:hover{
+            background:#1e293b;
+            color:white;
+        }
+
+        .active{
+            background:#2563eb;
+            color:white !important;
+        }
+
+        .user-box{
+            background:#1e293b;
+            padding:15px;
+            border-radius:15px;
+        }
+
+        .user-box h4{
+            margin-bottom:5px;
+        }
+
+        .user-box span{
+            color:#94a3b8;
+            font-size:14px;
+        }
+
+        .main-content{
+            flex:1;
+            padding:35px;
+        }
+
+        .topbar{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            margin-bottom:35px;
+        }
+
+        .topbar h2{
+            font-size:30px;
+        }
+
+        .status{
+            background:#1e293b;
+            padding:12px 20px;
+            border-radius:12px;
+            color:#22c55e;
+            font-weight:600;
+        }
+
+        .cards{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+            gap:20px;
+            margin-bottom:35px;
+        }
+
+        .card{
+            background:#1e293b;
+            padding:25px;
+            border-radius:20px;
+            border:1px solid rgba(255,255,255,0.05);
+        }
+
+        .card span{
+            color:#94a3b8;
+            font-size:14px;
+        }
+
+        .card h3{
+            margin-top:15px;
+            font-size:32px;
+        }
+
+        .crud-container{
+            background:#1e293b;
+            border-radius:25px;
+            padding:30px;
+            border:1px solid rgba(255,255,255,0.05);
+        }
+
+        .crud-header{
+            margin-bottom:25px;
+        }
+
+        .crud-header h3{
+            margin-bottom:10px;
+            font-size:24px;
+        }
+
+        .crud-header p{
+            color:#94a3b8;
+            font-size:14px;
+        }
+
+        .form-grid{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+            gap:15px;
+            margin-bottom:25px;
+        }
+
+        input, select{
+            padding:14px;
+            border:none;
+            border-radius:12px;
+            background:#0f172a;
+            color:white;
+            outline:none;
+        }
+
+        .btn{
+            background:#2563eb;
+            border:none;
+            color:white;
+            border-radius:12px;
+            cursor:pointer;
+            font-weight:600;
+            transition:0.3s;
+        }
+
+        .btn:hover{
+            background:#3b82f6;
+        }
+
+        table{
+            width:100%;
+            border-collapse:collapse;
+        }
+
+        th{
+            background:#0f172a;
+            padding:15px;
+            color:#60a5fa;
+        }
+
+        td{
+            padding:15px;
+            text-align:center;
+            border-bottom:1px solid rgba(255,255,255,0.05);
+        }
+
+        .delete-btn{
+            background:#dc2626;
+            border:none;
+            color:white;
+            padding:10px 15px;
+            border-radius:10px;
+            cursor:pointer;
+        }
+
+        .delete-btn:hover{
+            background:#ef4444;
+        }
+
+        .edit-btn{
+            background:#f59e0b;
+            border:none;
+            color:white;
+            padding:10px 15px;
+            border-radius:10px;
+            cursor:pointer;
+            margin-right:8px;
+        }
+
+        .edit-btn:hover{
+            background:#fbbf24;
+        }
+
+        @media(max-width:900px){
+
+            body{
+                flex-direction:column;
+            }
+
+            .sidebar{
+                width:100%;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <aside class="sidebar">
+
+        <div>
+
+            <div class="logo">
+
+                <h1>INVENTRA</h1>
+                <span>DataMarket S.A.</span>
+
+            </div>
+
+            <div class="menu">
+
+                <a href="index.html">Dashboard</a>
+
+                <a href="inventario.html">
+                    Inventario
+                </a>
+
+                <a href="pedidos.html" class="active">
+                    Pedidos
+                </a>
+
+                <a href="reportes.html">
+                    Reportes
+                </a>
+
+                <a href="usuarios.html">
+                    Usuarios
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="user-box">
+
+            <h4>Administrador</h4>
+            <span>Sistema operativo activo</span>
+
+        </div>
+
+    </aside>
+
+    <main class="main-content">
+
+        <div class="topbar">
+
+            <h2>Gestión de Pedidos</h2>
+
+            <div class="status">
+                ● Sistema en línea
+            </div>
+
+        </div>
+
+        <section class="cards">
+
+            <div class="card">
+                <span>Total de pedidos</span>
+                <h3 id="contadorPedidos">0</h3>
+            </div>
+
+            <div class="card">
+                <span>Pedidos pendientes</span>
+                <h3 id="pendientes">0</h3>
+            </div>
+
+            <div class="card">
+                <span>Pedidos completados</span>
+                <h3 id="completados">0</h3>
+            </div>
+
+        </section>
+
+        <section class="crud-container">
+
+            <div class="crud-header">
+
+                <h3>Registro de Pedidos</h3>
+
+                <p>
+                    Administración de pedidos y seguimiento operativo.
+                </p>
+
+            </div>
+
+            <div class="form-grid">
+
+                <input
+                    type="text"
+                    id="cliente"
+                    placeholder="Nombre del cliente"
+                >
+
+                <input
+                    type="text"
+                    id="producto"
+                    placeholder="Producto solicitado"
+                >
+
+                <input
+                    type="number"
+                    id="cantidad"
+                    placeholder="Cantidad"
+                >
+
+                <select id="estado">
+
+                    <option value="Pendiente">
+                        Pendiente
+                    </option>
+
+                    <option value="Completado">
+                        Completado
+                    </option>
+
+                </select>
+
+                <button class="btn" onclick="agregarPedido()">
+                    Registrar
+                </button>
+
+            </div>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>Cliente</th>
+                        <th>Producto</th>
+                        <th>Cantidad</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+
+                </thead>
+
+                <tbody id="tablaPedidos"></tbody>
+
+            </table>
+
+        </section>
+
+    </main>
+
+    <script>
+
+        let pedidos = JSON.parse(
+            localStorage.getItem("pedidos")
+        ) || [];
+
+        let editando = false;
+        let idEditar = null;
+
+        function guardarLocal(){
+
+            localStorage.setItem(
+                "pedidos",
+                JSON.stringify(pedidos)
+            );
+
+        }
+
+        function agregarPedido(){
+
+            const cliente = document.getElementById("cliente").value;
+            const producto = document.getElementById("producto").value;
+            const cantidad = document.getElementById("cantidad").value;
+            const estado = document.getElementById("estado").value;
+
+            if(
+                cliente === "" ||
+                producto === "" ||
+                cantidad === ""
+            ){
+
+                alert("Completa todos los campos");
+                return;
+
+            }
+
+            if(editando){
+
+                pedidos = pedidos.map(pedido => {
+
+                    if(pedido.id === idEditar){
+
+                        return{
+                            ...pedido,
+                            cliente,
+                            producto,
+                            cantidad,
+                            estado
+                        };
+
+                    }
+
+                    return pedido;
+
+                });
+
+                editando = false;
+                idEditar = null;
+
+                document.querySelector(".btn").innerText =
+                "Registrar";
+
+            }else{
+
+                const pedido = {
+
+                    id: Date.now(),
+                    cliente,
+                    producto,
+                    cantidad,
+                    estado
+
+                };
+
+                pedidos.push(pedido);
+
+            }
+
+            guardarLocal();
+
+            mostrarPedidos();
+
+            limpiarCampos();
+
+        }
+
+        function mostrarPedidos(){
+
+            const tabla = document.getElementById(
+                "tablaPedidos"
+            );
+
+            tabla.innerHTML = "";
+
+            pedidos.forEach(pedido => {
+
+                tabla.innerHTML += `
+
+                    <tr>
+
+                        <td>${pedido.cliente}</td>
+
+                        <td>${pedido.producto}</td>
+
+                        <td>${pedido.cantidad}</td>
+
+                        <td>${pedido.estado}</td>
+
+                        <td>
+
+                            <button
+                                class="edit-btn"
+                                onclick="editarPedido(${pedido.id})"
+                            >
+                                Modificar
+                            </button>
+
+                            <button
+                                class="delete-btn"
+                                onclick="eliminarPedido(${pedido.id})"
+                            >
+                                Eliminar
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+                `;
+
+            });
+
+            actualizarDashboard();
+
+        }
+
+        function editarPedido(id){
+
+            const pedido = pedidos.find(
+                pedido => pedido.id === id
+            );
+
+            document.getElementById("cliente").value =
+            pedido.cliente;
+
+            document.getElementById("producto").value =
+            pedido.producto;
+
+            document.getElementById("cantidad").value =
+            pedido.cantidad;
+
+            document.getElementById("estado").value =
+            pedido.estado;
+
+            editando = true;
+
+            idEditar = id;
+
+            document.querySelector(".btn").innerText =
+            "Guardar Cambios";
+
+        }
+
+        function eliminarPedido(id){
+
+            pedidos = pedidos.filter(
+                pedido => pedido.id !== id
+            );
+
+            guardarLocal();
+
+            mostrarPedidos();
+
+        }
+
+        function actualizarDashboard(){
+
+            document.getElementById(
+                "contadorPedidos"
+            ).innerText = pedidos.length;
+
+            const pendientes = pedidos.filter(
+                pedido => pedido.estado === "Pendiente"
+            );
+
+            const completados = pedidos.filter(
+                pedido => pedido.estado === "Completado"
+            );
+
+            document.getElementById(
+                "pendientes"
+            ).innerText = pendientes.length;
+
+            document.getElementById(
+                "completados"
+            ).innerText = completados.length;
+
+        }
+
+        function limpiarCampos(){
+
+            document.getElementById("cliente").value = "";
+            document.getElementById("producto").value = "";
+            document.getElementById("cantidad").value = "";
+
+        }
+
+        mostrarPedidos();
+
+    </script>
+
+</body>
+</html>

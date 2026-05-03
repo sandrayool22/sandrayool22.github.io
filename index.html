@@ -1,3 +1,4 @@
+```html id="c4syzt"
 <!DOCTYPE html>
 <html lang="es">
 
@@ -19,190 +20,150 @@
 
         body{
             font-family:'Poppins',sans-serif;
-            background:#020617;
+            background:#0f172a;
             color:white;
-            overflow-x:hidden;
             min-height:100vh;
-            position:relative;
-        }
-
-        .bg-light{
-            position:absolute;
-            width:500px;
-            height:500px;
-            background:#2563eb;
-            filter:blur(180px);
-            opacity:0.20;
-            top:-150px;
-            right:-100px;
-        }
-
-        header{
-            width:100%;
-            padding:25px 70px;
             display:flex;
+        }
+
+        .sidebar{
+            width:260px;
+            background:#020617;
+            border-right:1px solid rgba(255,255,255,0.05);
+            padding:30px 20px;
+            display:flex;
+            flex-direction:column;
             justify-content:space-between;
-            align-items:center;
-            position:relative;
-            z-index:2;
         }
 
         .logo h1{
             color:#60a5fa;
-            font-size:32px;
-            letter-spacing:2px;
+            font-size:28px;
+            margin-bottom:5px;
         }
 
-        .logo p{
+        .logo span{
+            color:#94a3b8;
+            font-size:13px;
+        }
+
+        .menu{
+            margin-top:50px;
+        }
+
+        .menu a{
+            display:block;
+            text-decoration:none;
+            color:#cbd5e1;
+            padding:15px;
+            border-radius:12px;
+            margin-bottom:10px;
+            transition:0.3s;
+        }
+
+        .menu a:hover{
+            background:#1e293b;
+            color:white;
+        }
+
+        .active{
+            background:#2563eb;
+            color:white !important;
+        }
+
+        .user-box{
+            background:#1e293b;
+            padding:15px;
+            border-radius:15px;
+        }
+
+        .user-box h4{
+            margin-bottom:5px;
+        }
+
+        .user-box span{
             color:#94a3b8;
             font-size:14px;
         }
 
-        nav{
-            display:flex;
-            gap:25px;
+        .main-content{
+            flex:1;
+            padding:35px;
         }
 
-        nav a{
-            color:white;
-            text-decoration:none;
-            transition:0.3s;
-            font-weight:500;
-        }
-
-        nav a:hover{
-            color:#60a5fa;
-        }
-
-        main{
-            padding:50px 70px;
-            position:relative;
-            z-index:2;
-        }
-
-        .top-section{
+        .topbar{
             display:flex;
             justify-content:space-between;
             align-items:center;
-            gap:50px;
-            margin-bottom:50px;
+            margin-bottom:35px;
         }
 
-        .hero-text{
-            max-width:650px;
+        .topbar h2{
+            font-size:30px;
         }
 
-        .hero-text h2{
-            font-size:58px;
-            line-height:1.1;
-            margin-bottom:20px;
-        }
-
-        .hero-text p{
-            color:#cbd5e1;
-            font-size:18px;
-            line-height:1.7;
-            margin-bottom:30px;
-        }
-
-        .btn{
-            padding:15px 35px;
-            background:#2563eb;
-            border:none;
+        .status{
+            background:#1e293b;
+            padding:12px 20px;
             border-radius:12px;
-            color:white;
-            font-weight:600;
-            cursor:pointer;
-            transition:0.3s;
-        }
-
-        .btn:hover{
-            background:#3b82f6;
-            transform:translateY(-3px);
-        }
-
-        .dashboard-card{
-            width:380px;
-            background:rgba(255,255,255,0.05);
-            border:1px solid rgba(255,255,255,0.08);
-            backdrop-filter:blur(15px);
-            border-radius:25px;
-            padding:30px;
-            position:relative;
-            overflow:hidden;
-        }
-
-        .dashboard-card::before{
-            content:'';
-            position:absolute;
-            width:250px;
-            height:250px;
-            background:#2563eb;
-            filter:blur(120px);
-            opacity:0.20;
-            top:-100px;
-            right:-100px;
-        }
-
-        .dashboard-card h3{
-            margin-bottom:25px;
-            position:relative;
-        }
-
-        .mini-box{
-            background:rgba(255,255,255,0.05);
-            padding:18px;
-            border-radius:15px;
-            margin-bottom:15px;
-            display:flex;
-            justify-content:space-between;
-            align-items:center;
-            position:relative;
-        }
-
-        .mini-box span{
-            color:#cbd5e1;
-        }
-
-        .mini-box strong{
-            font-size:22px;
-        }
-
-        .online{
             color:#22c55e;
+            font-weight:600;
+        }
+
+        .cards{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+            gap:20px;
+            margin-bottom:35px;
+        }
+
+        .card{
+            background:#1e293b;
+            padding:25px;
+            border-radius:20px;
+            border:1px solid rgba(255,255,255,0.05);
+        }
+
+        .card span{
+            color:#94a3b8;
+            font-size:14px;
+        }
+
+        .card h3{
+            margin-top:15px;
+            font-size:32px;
         }
 
         .crud-container{
-            width:100%;
-            background:rgba(255,255,255,0.04);
-            border:1px solid rgba(255,255,255,0.08);
+            background:#1e293b;
             border-radius:25px;
-            padding:35px;
-            backdrop-filter:blur(10px);
+            padding:30px;
+            border:1px solid rgba(255,255,255,0.05);
         }
 
         .crud-header{
-            margin-bottom:30px;
+            margin-bottom:25px;
         }
 
         .crud-header h3{
-            font-size:32px;
             margin-bottom:10px;
+            font-size:24px;
         }
 
         .crud-header p{
             color:#94a3b8;
+            font-size:14px;
         }
 
         .form-grid{
             display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+            grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
             gap:15px;
             margin-bottom:25px;
         }
 
-        .form-grid input{
-            padding:15px;
+        input{
+            padding:14px;
             border:none;
             border-radius:12px;
             background:#0f172a;
@@ -210,21 +171,33 @@
             outline:none;
         }
 
+        .btn{
+            background:#2563eb;
+            border:none;
+            color:white;
+            border-radius:12px;
+            cursor:pointer;
+            font-weight:600;
+            transition:0.3s;
+        }
+
+        .btn:hover{
+            background:#3b82f6;
+        }
+
         table{
             width:100%;
             border-collapse:collapse;
-            margin-top:25px;
         }
 
         th{
-            background:#1e293b;
+            background:#0f172a;
             padding:15px;
             color:#60a5fa;
         }
 
         td{
             padding:15px;
-            background:rgba(255,255,255,0.03);
             text-align:center;
             border-bottom:1px solid rgba(255,255,255,0.05);
         }
@@ -232,9 +205,9 @@
         .delete-btn{
             background:#dc2626;
             border:none;
-            padding:10px 15px;
             color:white;
-            border-radius:8px;
+            padding:10px 15px;
+            border-radius:10px;
             cursor:pointer;
         }
 
@@ -242,27 +215,13 @@
             background:#ef4444;
         }
 
-        @media(max-width:950px){
+        @media(max-width:900px){
 
-            header{
-                flex-direction:column;
-                gap:20px;
-                padding:25px;
-            }
-
-            main{
-                padding:25px;
-            }
-
-            .top-section{
+            body{
                 flex-direction:column;
             }
 
-            .hero-text h2{
-                font-size:42px;
-            }
-
-            .dashboard-card{
+            .sidebar{
                 width:100%;
             }
 
@@ -274,71 +233,68 @@
 
 <body>
 
-    <div class="bg-light"></div>
+    <aside class="sidebar">
 
-    <header>
+        <div>
 
-        <div class="logo">
-            <h1>INVENTRA</h1>
-            <p>Plataforma inteligente para DataMarket S.A.</p>
-        </div>
+            <div class="logo">
+                <h1>INVENTRA</h1>
+                <span>DataMarket S.A.</span>
+            </div>
 
-        <nav>
-            <a href="#">Dashboard</a>
-            <a href="#">Inventario</a>
-            <a href="#">Pedidos</a>
-            <a href="#">Reportes</a>
-        </nav>
+            <div class="menu">
 
-    </header>
-
-    <main>
-
-        <section class="top-section">
-
-            <div class="hero-text">
-
-                <h2>
-                    Centraliza y controla <br>
-                    la información de DataMarket
-                </h2>
-
-                <p>
-                    Inventra permite administrar productos, inventario y pedidos
-                    desde una sola plataforma moderna, reduciendo errores,
-                    retrasos y desorganización operativa.
-                </p>
-
-                <button class="btn">
-                    Sistema Activo
-                </button>
+                <a href="#" class="active">Dashboard</a>
+                <a href="#">Inventario</a>
+                <a href="#">Pedidos</a>
+                <a href="#">Reportes</a>
+                <a href="#">Usuarios</a>
 
             </div>
 
-            <div class="dashboard-card">
+        </div>
 
-                <h3>Dashboard Operativo</h3>
+        <div class="user-box">
 
-                <div class="mini-box">
-                    <span>Estado del sistema</span>
-                    <strong class="online">ONLINE</strong>
-                </div>
+            <h4>Administrador</h4>
+            <span>Sistema operativo activo</span>
 
-                <div class="mini-box">
-                    <span>Productos registrados</span>
-                    <strong id="contadorProductos">0</strong>
-                </div>
+        </div>
 
-                <div class="mini-box">
-                    <span>Pedidos procesados</span>
-                    <strong>12</strong>
-                </div>
+    </aside>
 
-                <div class="mini-box">
-                    <span>Inventario bajo</span>
-                    <strong>3</strong>
-                </div>
+    <main class="main-content">
 
+        <div class="topbar">
+
+            <h2>Panel de Inventario</h2>
+
+            <div class="status">
+                ● Sistema en línea
+            </div>
+
+        </div>
+
+        <section class="cards">
+
+            <div class="card">
+                <span>Productos registrados</span>
+                <h3 id="contadorProductos">0</h3>
+            </div>
+
+            <div class="card">
+                <span>Pedidos procesados</span>
+                <h3>18</h3>
+            </div>
+
+            <div class="card">
+                <span>Productos con bajo stock</span>
+                <h3>4</h3>
+            </div>
+
+            <div class="card">
+                <span>Usuarios activos</span>
+                <h3>6</h3>
             </div>
 
         </section>
@@ -347,37 +303,36 @@
 
             <div class="crud-header">
 
-                <h3>Módulo de Inventario</h3>
+                <h3>Gestión de Productos</h3>
 
                 <p>
-                    Registro y control de productos para optimizar
-                    la operación de DataMarket S.A.
+                    Registro y administración de inventario.
                 </p>
 
             </div>
 
             <div class="form-grid">
 
-                <input 
-                    type="text" 
+                <input
+                    type="text"
                     id="nombre"
                     placeholder="Nombre del producto"
                 >
 
-                <input 
+                <input
                     type="number"
                     id="precio"
                     placeholder="Precio"
                 >
 
-                <input 
+                <input
                     type="number"
                     id="stock"
-                    placeholder="Stock disponible"
+                    placeholder="Cantidad en stock"
                 >
 
                 <button class="btn" onclick="agregarProducto()">
-                    Registrar Producto
+                    Registrar
                 </button>
 
             </div>
@@ -390,7 +345,7 @@
                         <th>Producto</th>
                         <th>Precio</th>
                         <th>Stock</th>
-                        <th>Acción</th>
+                        <th>Acciones</th>
                     </tr>
 
                 </thead>
@@ -429,16 +384,18 @@
                 precio === "" ||
                 stock === ""
             ){
+
                 alert("Completa todos los campos");
                 return;
+
             }
 
             const producto = {
 
                 id: Date.now(),
-                nombre: nombre,
-                precio: precio,
-                stock: stock
+                nombre,
+                precio,
+                stock
 
             };
 
@@ -454,7 +411,9 @@
 
         function mostrarProductos(){
 
-            const tabla = document.getElementById("tablaProductos");
+            const tabla = document.getElementById(
+                "tablaProductos"
+            );
 
             tabla.innerHTML = "";
 
@@ -525,3 +484,4 @@
 
 </body>
 </html>
+```

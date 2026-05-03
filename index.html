@@ -1,8 +1,8 @@
-```html id="c4syzt"
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -215,6 +215,20 @@
             background:#ef4444;
         }
 
+        .edit-btn{
+            background:#f59e0b;
+            border:none;
+            color:white;
+            padding:10px 15px;
+            border-radius:10px;
+            cursor:pointer;
+            margin-right:8px;
+        }
+
+        .edit-btn:hover{
+            background:#fbbf24;
+        }
+
         @media(max-width:900px){
 
             body{
@@ -238,8 +252,10 @@
         <div>
 
             <div class="logo">
+
                 <h1>INVENTRA</h1>
                 <span>DataMarket S.A.</span>
+
             </div>
 
             <div class="menu">
@@ -364,6 +380,9 @@
             localStorage.getItem("productos")
         ) || [];
 
+        let editando = false;
+        let idEditar = null;
+
         function guardarLocal(){
 
             localStorage.setItem(
@@ -390,16 +409,45 @@
 
             }
 
-            const producto = {
+            if(editando){
 
-                id: Date.now(),
-                nombre,
-                precio,
-                stock
+                productos = productos.map(producto => {
 
-            };
+                    if(producto.id === idEditar){
 
-            productos.push(producto);
+                        return{
+                            ...producto,
+                            nombre,
+                            precio,
+                            stock
+                        };
+
+                    }
+
+                    return producto;
+
+                });
+
+                editando = false;
+                idEditar = null;
+
+                document.querySelector(".btn").innerText =
+                "Registrar";
+
+            }else{
+
+                const producto = {
+
+                    id: Date.now(),
+                    nombre,
+                    precio,
+                    stock
+
+                };
+
+                productos.push(producto);
+
+            }
 
             guardarLocal();
 
@@ -432,6 +480,13 @@
                         <td>
 
                             <button
+                                class="edit-btn"
+                                onclick="editarProducto(${producto.id})"
+                            >
+                                Modificar
+                            </button>
+
+                            <button
                                 class="delete-btn"
                                 onclick="eliminarProducto(${producto.id})"
                             >
@@ -447,6 +502,30 @@
             });
 
             actualizarDashboard();
+
+        }
+
+        function editarProducto(id){
+
+            const producto = productos.find(
+                producto => producto.id === id
+            );
+
+            document.getElementById("nombre").value =
+            producto.nombre;
+
+            document.getElementById("precio").value =
+            producto.precio;
+
+            document.getElementById("stock").value =
+            producto.stock;
+
+            editando = true;
+
+            idEditar = id;
+
+            document.querySelector(".btn").innerText =
+            "Guardar Cambios";
 
         }
 
@@ -484,4 +563,3 @@
 
 </body>
 </html>
-```

@@ -12,15 +12,15 @@
 body{
     margin:0;
     font-family:'Segoe UI', sans-serif;
-    background:#EFEAE4;
     overflow:hidden;
+    background:#EFEAE4;
 }
 
-/* CONTENEDOR PRINCIPAL */
+/* CONTENEDOR */
 .hero{
     min-height:100vh;
     display:grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns:1fr 1fr;
 }
 
 /* PANEL IZQUIERDO */
@@ -32,26 +32,6 @@ body{
     background:#E8E0D6;
 }
 
-/* PANEL DERECHO / IMAGEN */
-.right{
-    display:block;
-    text-decoration:none;
-
-    background:
-    linear-gradient(rgba(0,0,0,0.15),rgba(0,0,0,0.25)),
-    url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c");
-
-    background-size:cover;
-    background-position:center;
-
-    transition:0.4s;
-}
-
-.right:hover{
-    transform:scale(1.01);
-}
-
-/* LOGO */
 .logo{
     font-size:28px;
     font-weight:700;
@@ -60,9 +40,8 @@ body{
     letter-spacing:2px;
 }
 
-/* TITULO */
 h1{
-    font-size:72px;
+    font-size:70px;
     line-height:1.05;
     font-weight:300;
     margin-bottom:30px;
@@ -74,7 +53,6 @@ h1 span{
     font-weight:600;
 }
 
-/* TEXTO */
 p{
     font-size:18px;
     max-width:520px;
@@ -91,12 +69,12 @@ p{
     border-radius:30px;
     text-decoration:none;
     width:fit-content;
+    cursor:pointer;
     transition:0.3s;
 }
 
 .btn-main:hover{
     background:#8F0E15;
-    color:white;
 }
 
 /* KPIs */
@@ -114,11 +92,102 @@ p{
 .info h4{
     font-size:24px;
     margin:0;
-    color:#2B2B2B;
 }
 
 .info small{
     color:#666;
+}
+
+/* PANEL DERECHO */
+.right{
+    position:relative;
+    overflow:hidden;
+}
+
+/* IMAGEN */
+.image-side{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:
+    linear-gradient(rgba(0,0,0,0.15),rgba(0,0,0,0.25)),
+    url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c");
+
+    background-size:cover;
+    background-position:center;
+
+    transition:1s;
+}
+
+/* LOGIN */
+.login-side{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:
+    linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),
+    url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c");
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    opacity:0;
+    visibility:hidden;
+    transition:0.8s;
+}
+
+/* ACTIVO */
+.login-side.active{
+    opacity:1;
+    visibility:visible;
+}
+
+/* CARD LOGIN */
+.login-card{
+    width:420px;
+    background:rgba(255,255,255,0.12);
+    backdrop-filter:blur(14px);
+    border:1px solid rgba(255,255,255,0.2);
+    border-radius:24px;
+    padding:45px;
+    color:white;
+}
+
+.login-card h2{
+    text-align:center;
+    margin-bottom:10px;
+}
+
+.login-card p{
+    text-align:center;
+    color:rgba(255,255,255,0.75);
+    margin-bottom:30px;
+}
+
+/* INPUTS */
+.form-control{
+    height:52px;
+    border:none;
+    border-radius:12px;
+}
+
+/* BOTON LOGIN */
+.btn-login{
+    width:100%;
+    height:52px;
+    background:#B5121B;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-weight:600;
+}
+
+.btn-login:hover{
+    background:#8F0E15;
 }
 
 /* RESPONSIVE */
@@ -129,11 +198,11 @@ p{
     }
 
     .right{
-        min-height:350px;
+        min-height:500px;
     }
 
     h1{
-        font-size:48px;
+        font-size:50px;
     }
 
     .left{
@@ -143,6 +212,7 @@ p{
     body{
         overflow:auto;
     }
+
 }
 
 </style>
@@ -152,7 +222,7 @@ p{
 
 <section class="hero">
 
-    <!-- PANEL IZQUIERDO -->
+    <!-- IZQUIERDA -->
     <div class="left">
 
         <div class="logo">
@@ -166,16 +236,13 @@ p{
 
         <p>
             Plataforma web diseñada para optimizar el control,
-            seguimiento y priorización de solicitudes operativas
-            dentro de Samboro.
+            seguimiento y priorización de solicitudes operativas.
         </p>
 
-        <!-- BOTON LOGIN -->
-        <a href="login.html" class="btn-main">
+        <button class="btn-main" onclick="mostrarLogin()">
             Ingresar al sistema
-        </a>
+        </button>
 
-        <!-- KPIs -->
         <div class="info-box">
 
             <div class="info">
@@ -197,10 +264,53 @@ p{
 
     </div>
 
-    <!-- IMAGEN QUE REDIRIGE -->
-    <a href="login.html" class="right"></a>
+    <!-- DERECHA -->
+    <div class="right">
+
+        <!-- IMAGEN -->
+        <div class="image-side"></div>
+
+        <!-- LOGIN -->
+        <div class="login-side" id="loginSide">
+
+            <div class="login-card">
+
+                <h2>Bienvenido</h2>
+
+                <p>
+                    Ingrese sus credenciales
+                </p>
+
+                <div class="mb-3">
+                    <label>Usuario</label>
+                    <input type="text" class="form-control">
+                </div>
+
+                <div class="mb-4">
+                    <label>Contraseña</label>
+                    <input type="password" class="form-control">
+                </div>
+
+                <button class="btn btn-login">
+                    Ingresar
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
+
+<script>
+
+function mostrarLogin(){
+    document.getElementById("loginSide")
+    .classList.add("active");
+}
+
+</script>
 
 </body>
 </html>

@@ -1,30 +1,166 @@
+<!-- ========================= -->
+<!-- dashboard.html -->
+<!-- ========================= -->
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Dashboard Principal</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<meta charset="UTF-8">
+<title>Dashboard</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+
+body{
+    background:#F5F5F5;
+    font-family:'Segoe UI',sans-serif;
+}
+
+.sidebar{
+    width:240px;
+    height:100vh;
+    background:#B5121B;
+    position:fixed;
+    padding:30px 20px;
+}
+
+.sidebar h4{
+    color:white;
+    margin-bottom:40px;
+}
+
+.sidebar a{
+    display:block;
+    color:white;
+    text-decoration:none;
+    padding:12px;
+    border-radius:10px;
+    margin-bottom:10px;
+}
+
+.sidebar a:hover{
+    background:rgba(255,255,255,0.15);
+}
+
+.main{
+    margin-left:260px;
+    padding:30px;
+}
+
+.dashboard-card{
+    background:white;
+    border-radius:18px;
+    padding:25px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.05);
+    border-left:6px solid #B5121B;
+}
+
+.card-title{
+    color:#777;
+}
+
+.card-value{
+    font-size:32px;
+    font-weight:bold;
+    color:#2B2B2B;
+}
+
+.table-card{
+    background:white;
+    border-radius:18px;
+    padding:20px;
+    margin-top:30px;
+}
+
+.table thead{
+    background:#B5121B;
+    color:white;
+}
+
+</style>
 </head>
-<body class="bg-light">
 
-<div class="container py-4">
-  <h3 class="mb-4">Dashboard Principal</h3>
+<body>
 
-  <div class="row g-3 mb-4">
-    <div class="col-md-3"><div class="card p-3 border-0 shadow-sm"><h4>25</h4><p>Solicitudes</p></div></div>
-    <div class="col-md-3"><div class="card p-3 border-0 shadow-sm"><h4>8</h4><p>Pendientes</p></div></div>
-    <div class="col-md-3"><div class="card p-3 border-0 shadow-sm"><h4>12</h4><p>En proceso</p></div></div>
-    <div class="col-md-3"><div class="card p-3 border-0 shadow-sm"><h4>5</h4><p>Finalizadas</p></div></div>
-  </div>
+<div class="sidebar">
+    <h4>Samboro</h4>
 
-  <div class="card border-0 shadow-sm">
-    <div class="card-body">
-      <h5>Resumen operativo</h5>
-      <p>Desde esta pantalla la gerencia puede visualizar el estado general de las solicitudes, prioridades y rendimiento del sistema.</p>
-      <a href="registrar-solicitud.html" class="btn btn-dark">Nueva solicitud</a>
-      <a href="seguimiento-solicitudes.html" class="btn btn-outline-dark">Ver seguimiento</a>
+    <a href="#">Dashboard</a>
+    <a href="registrar-solicitud.html">Nueva Solicitud</a>
+    <a href="seguimiento-solicitudes.html">Seguimiento</a>
+    <a href="#">Reportes</a>
+</div>
+
+<div class="main">
+
+    <h2 class="mb-4">Dashboard Principal</h2>
+
+    <div class="row g-4">
+
+        <div class="col-md-3">
+            <div class="dashboard-card">
+                <div class="card-title">Solicitudes</div>
+                <div class="card-value">25</div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="dashboard-card">
+                <div class="card-title">Pendientes</div>
+                <div class="card-value">8</div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="dashboard-card">
+                <div class="card-title">En Proceso</div>
+                <div class="card-value">12</div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="dashboard-card">
+                <div class="card-title">Finalizadas</div>
+                <div class="card-value">5</div>
+            </div>
+        </div>
+
     </div>
-  </div>
+
+    <div class="table-card">
+
+        <h5 class="mb-4">Últimas Solicitudes</h5>
+
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Solicitud</th>
+                    <th>Estado</th>
+                    <th>Prioridad</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>001</td>
+                    <td>Falla de red</td>
+                    <td>Pendiente</td>
+                    <td>Alta</td>
+                </tr>
+
+                <tr>
+                    <td>002</td>
+                    <td>Reparación puerta</td>
+                    <td>En proceso</td>
+                    <td>Media</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
 </div>
 
 </body>

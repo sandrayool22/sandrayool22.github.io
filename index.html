@@ -2,165 +2,24 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Wireframe Sistema Samboro</title>
+  <title>Inicio de Sesión</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
+<body class="bg-light d-flex align-items-center justify-content-center vh-100">
 
-<body class="bg-light">
+  <div class="card shadow-sm border-0" style="width: 360px;">
+    <div class="card-body p-4">
+      <h4 class="text-center mb-4">Sistema Samboro</h4>
 
-<div class="container-fluid p-4">
+      <label class="form-label">Usuario</label>
+      <input type="text" class="form-control mb-3" placeholder="Ingrese su usuario">
 
-  <h3 class="mb-4 text-center">Sistema de Gestión de Solicitudes Operativas - Samboro</h3>
+      <label class="form-label">Contraseña</label>
+      <input type="password" class="form-control mb-4" placeholder="Ingrese su contraseña">
 
-  <div class="row g-3">
-
-    <!-- Login -->
-    <div class="col-md-3">
-      <div class="card shadow-sm">
-        <div class="card-header bg-dark text-white">Inicio de Sesión</div>
-        <div class="card-body">
-          <input class="form-control mb-2" placeholder="Usuario">
-          <input class="form-control mb-2" placeholder="Contraseña" type="password">
-          <button class="btn btn-primary w-100">Ingresar</button>
-        </div>
-      </div>
+      <a href="dashboard.html" class="btn btn-dark w-100">Ingresar</a>
     </div>
-
-    <!-- Dashboard -->
-    <div class="col-md-9">
-      <div class="card shadow-sm">
-        <div class="card-header bg-primary text-white">Dashboard Principal</div>
-        <div class="card-body">
-          <div class="row text-center">
-            <div class="col">
-              <div class="border rounded p-3 bg-white">
-                <h5>25</h5>
-                <small>Solicitudes</small>
-              </div>
-            </div>
-            <div class="col">
-              <div class="border rounded p-3 bg-white">
-                <h5>8</h5>
-                <small>Pendientes</small>
-              </div>
-            </div>
-            <div class="col">
-              <div class="border rounded p-3 bg-white">
-                <h5>12</h5>
-                <small>En Proceso</small>
-              </div>
-            </div>
-            <div class="col">
-              <div class="border rounded p-3 bg-white">
-                <h5>5</h5>
-                <small>Finalizadas</small>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Registro solicitud -->
-    <div class="col-md-4">
-      <div class="card shadow-sm">
-        <div class="card-header bg-success text-white">Registrar Solicitud</div>
-        <div class="card-body">
-          <input class="form-control mb-2" placeholder="Título de solicitud">
-          <select class="form-select mb-2">
-            <option>Categoría</option>
-            <option>Mantenimiento</option>
-            <option>Informática</option>
-            <option>Arquitectura</option>
-          </select>
-          <textarea class="form-control mb-2" rows="3" placeholder="Descripción"></textarea>
-          <input class="form-control mb-2" type="file">
-          <button class="btn btn-success w-100">Enviar Solicitud</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Seguimiento -->
-    <div class="col-md-5">
-      <div class="card shadow-sm">
-        <div class="card-header bg-warning">Seguimiento de Solicitudes</div>
-        <div class="card-body">
-          <table class="table table-sm">
-            <thead>
-              <tr>
-                <th>ID</th>
-                <th>Solicitud</th>
-                <th>Estado</th>
-                <th>Prioridad</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>001</td>
-                <td>Falla de red</td>
-                <td><span class="badge bg-warning">Pendiente</span></td>
-                <td>Alta</td>
-              </tr>
-              <tr>
-                <td>002</td>
-                <td>Reparación de puerta</td>
-                <td><span class="badge bg-primary">En proceso</span></td>
-                <td>Media</td>
-              </tr>
-              <tr>
-                <td>003</td>
-                <td>Cambio de equipo</td>
-                <td><span class="badge bg-success">Finalizada</span></td>
-                <td>Baja</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-
-    <!-- Detalle -->
-    <div class="col-md-3">
-      <div class="card shadow-sm">
-        <div class="card-header bg-info text-white">Detalle de Solicitud</div>
-        <div class="card-body">
-          <p><strong>ID:</strong> 001</p>
-          <p><strong>Área:</strong> Informática</p>
-          <p><strong>Responsable:</strong> Técnico asignado</p>
-          <p><strong>Estado:</strong> Pendiente</p>
-          <button class="btn btn-info w-100 text-white">Ver Historial</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Administración -->
-    <div class="col-md-6">
-      <div class="card shadow-sm">
-        <div class="card-header bg-secondary text-white">Panel Administrativo</div>
-        <div class="card-body">
-          <button class="btn btn-outline-secondary me-2">Usuarios</button>
-          <button class="btn btn-outline-secondary me-2">Roles</button>
-          <button class="btn btn-outline-secondary me-2">Categorías</button>
-          <button class="btn btn-outline-secondary">Permisos</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Reportes -->
-    <div class="col-md-6">
-      <div class="card shadow-sm">
-        <div class="card-header bg-danger text-white">Reportes y KPIs</div>
-        <div class="card-body">
-          <p>Tiempo promedio de respuesta: <strong>18 horas</strong></p>
-          <p>Solicitudes resueltas: <strong>80%</strong></p>
-          <p>Precisión de IA: <strong>92%</strong></p>
-          <button class="btn btn-danger">Generar Reporte</button>
-        </div>
-      </div>
-    </div>
-
   </div>
-</div>
 
 </body>
 </html>
